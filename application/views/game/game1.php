@@ -14,7 +14,7 @@
 			<div>
 				<?php 
         			foreach ($game->result() as $row){
-        				echo form_open('gameone/result/'.$this->uri->segment(0));
+        				echo form_open('game/result/'.$this->uri->segment(0));
         				?>
         				<input type="hidden" name="game_id" value="<?php echo $row->game_id;?>">
         				<?php

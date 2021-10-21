@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Gameone extends CI_Controller {
+class Game extends CI_Controller {
 
 	public function index()
 	{
@@ -26,7 +26,7 @@ class Gameone extends CI_Controller {
 			}
 			else{
 				$this->session->set_flashdata('error', 'Invalid Username And Password');
-				redirect('gameone');
+				redirect('game');
 			}
 	    
 	}
@@ -49,7 +49,7 @@ class Gameone extends CI_Controller {
 				$data['original_answer'] = $original_answer;
 				$data['original_image'] = $original_image;
 				$this->load->view('header',$data);
-				$this->load->view('game1/result');
+				$this->load->view('game/result');
 				$this->load->view('footer');
 			}
 			else{

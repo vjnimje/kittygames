@@ -4,7 +4,7 @@
 			<div class="col-md-4">
 				<div class="align-self-center">
 					<?php
-					echo form_open('gameone/play/'.$this->uri->segment(0));?>
+					echo form_open('game/play/'.$this->uri->segment(0));?>
 					<div id="mydiv">
 						<?php
 						foreach($h->result() as $row){
