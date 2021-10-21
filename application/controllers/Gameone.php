@@ -8,7 +8,7 @@ class Gameone extends CI_Controller {
 		$this->load->model('game_one');
 		$data['h']= $this->game_one->get_games();
 		$this->load->view('header', $data);
-		$this->load->view('game1/game');
+		$this->load->view('game/game');
 		$this->load->view('footer');
 	}
 	public function play(){
@@ -21,7 +21,7 @@ class Gameone extends CI_Controller {
 				$data = array();
 			    $data['game']=$game;
 			    $this->load->view('header',$data);
-				$this->load->view('game1/game1');
+				$this->load->view('game/game1');
 				$this->load->view('footer');
 			}
 			else{
