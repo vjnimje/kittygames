@@ -83,27 +83,7 @@ class Admin extends CI_Controller {
 		}		
 	}
 
-	// function view_game(){
-	// 	if ($this->session->userdata('username') != '') {
-	// 		$username = $this->session->userdata('username');
-	// 		$this->load->model('login_model');
-	// 		$user = $this->login_model->get_profile($username);
-	// 		$data = array();
-	// 		$data['user'] = $user;
-	// 		$data['title']= "Dashboard";
-	// 		$data['username'] = $this->session->userdata('username');
-	// 		$this->load->model('dashboard_model');
-	// 		$data['h']= $this->dashboard_model->get_games();
-	// 		$this->load->view('admin/header',$data);
-	// 		$this->load->view('admin/view_game');
-	// 		$this->load->view('admin/footer');
 
-	// 	} else {
-	// 		redirect('admin');
-
-	// 	}	
-		
-	// }
 	function update_game(){
 		if ($this->session->userdata('username') != '') {
 			$username = $this->session->userdata('username');

@@ -30,9 +30,15 @@ foreach ($user as $row) {
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="<?php echo base_url();?>admin/dashboard">Home</a>
                     </li>
-<!--                     <li class="nav-item">
-                      <a class="nav-link" href="#">View Ground Links</a>
-                    </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url();?>gameone_admin/update_game">Game One</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url();?>gametwo_admin/update_game">Game Two</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url();?>gamethree_admin/update_game">Game Three</a>
+                    </li>
                     <li class="nav-item">
                       <a class="nav-link" href="<?php echo base_url();?>admin/update_game">Update Game</a>
                     </li>
