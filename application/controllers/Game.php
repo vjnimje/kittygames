@@ -5,8 +5,8 @@ class Game extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('game_one');
-		$data['h']= $this->game_one->get_games();
+		$this->load->model('game_model');
+		$data['h']= $this->game_model->get_games();
 		$this->load->view('header', $data);
 		$this->load->view('game/game');
 		$this->load->view('footer');

@@ -28,4 +28,72 @@ class Gameone_admin extends CI_Controller {
 
 		}	
 	}
+		function update_game_list(){
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules("game_id", "Game ID", 'required');
+		$this->form_validation->set_rules("game_name", "Game Name", 'required');
+		$this->form_validation->set_rules("game_link", "Game Link", 'required');
+		$this->form_validation->set_rules("game_answer", "Game Answer", 'required');
+		$this->form_validation->set_rules("game_option_answer", "Game Option Answer", 'required');
+		$this->form_validation->set_rules('game_image', 'Upload Game', 'file_required');
+		if ($this->form_validation->run()) {
+
+			if(!empty($_FILES['game_image']['name'])){
+	        	$new_name 			= time().$_FILES['game_image']['name'];
+	            $config['file_name']		= str_replace(' ', '_', $new_name);
+	            $config['upload_path']          = './assets/upload/game/';
+		        $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
+		        $config['max_size']             = 5000;
+		        $config['max_width']            = 5000;
+		        $config['max_height']           = 5000;
+		        $this->load->library('upload', $config);
+		        $upload_data = $this->upload->data();
+		        $filename = $upload_data['file_name'];
+	        }
+	        else{
+	        	$filename='';
+	        }
+
+			$this->load->model('dashboard_model');
+			$data = array(
+				'game_id' =>$this->input->post('game_id'),
+				'game_name' =>$this->input->post('game_name'),
+				'game_link' =>$this->input->post('game_link'),
+				'game_image' => $filename,
+				'game_answer' =>$this->input->post('game_answer'),
+				'game_option_answer' =>$this->input->post('game_option_answer')
+				
+			);
+			$this->update_game_image();
+			$game_id = $this->input->post('game_id');
+			$this->db->where('game_id', $game_id);
+			$this->db->update('games', $data);
+			$this->session->set_flashdata('message', 'You Have susessfully Upadated - '.$game_id.'!');
+			redirect('admin/update_game');
+			
+
+		}
+		else{
+			redirect('admin/update_game');
+		}
+	}
+	private function update_game_image(){
+		$config['upload_path']          = './assets/upload/game/';
+        $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
+        $config['max_size']             = 5000;
+        $config['max_width']            = 5000;
+        $config['max_height']           = 5000;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('game_image'))
+            {
+                // $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();  
+            }
+            else
+            {
+                $this->update_game();
+            }
+	}
 }

@@ -1,5 +1,5 @@
 <?php
-	class Game_one extends CI_Model{
+	class Game_model extends CI_Model{
 		function get_games(){
 			$query = $this->db->get('games');  
         return $query; 
