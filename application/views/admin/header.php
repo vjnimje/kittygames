@@ -9,8 +9,9 @@ foreach ($user as $row) {
     <title><?php echo $title;?></title>
     <head>
         <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-        <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<?php echo base_url();?>assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/shapes.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 
     </head>

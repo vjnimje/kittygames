@@ -1,0 +1,85 @@
+.circle {
+  height: 100px;
+  width: 100px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  margin: 0.5rem;
+}
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: #198754;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  margin: 0.5rem;
+}
+
+.rectangle {
+  height: 100px;
+  width: 80px;
+  background-color: #b02a37;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  margin: 0.5rem;
+}
+
+.trapezoid {
+  border-bottom: 100px solid #ffc107;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  height: 0;
+  width: 150px;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  margin: 0.5em;
+}
+.parallelogram {
+  width: 100px;
+  height: 100px;
+  transform: skew(20deg);
+  background: #17a2b8;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  margin: 0.5rem;
+}
+
+.shape_link{
+  color: white;
+  text-decoration: none;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+  .blink{
+    width:100%;
+    height: auto;
+      background-color: magenta;
+    padding: 15px;  
+    text-align: center;
+    line-height: 100px;
+    margin-top: 2rem;
+  }
+  span{
+    font-size: 100px;
+    font-family: cursive;
+    color: white;
+    animation: blink 1s linear infinite;
+  }
+@keyframes blink{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}
