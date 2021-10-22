@@ -62,7 +62,7 @@ class Gametwo extends CI_Controller {
 				'status'=> '1'
 				);
 		$this->db->where('game_id', $key);
-		$this->db->update('gameone', $data);
+		$this->db->update('gametwo', $data);
 		}
 		$this->index();
 	}
