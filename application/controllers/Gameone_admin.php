@@ -70,7 +70,7 @@ class Gameone_admin extends CI_Controller {
 	        	$originalimage='';
 	        }
 
-			$this->load->model('dashboard_model');
+			// $this->load->model('dashboard_model');
 			$data = array(
 				'game_id' =>$this->input->post('game_id'),
 				'blur_image' => $blurimage,
