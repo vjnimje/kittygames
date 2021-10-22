@@ -8,7 +8,7 @@
 			<div id="myTest">
 				<?php 
         			foreach ($game->result() as $row){ ?>
-					<img style="margin-top: 2rem" id="id1" src="<?php echo base_url()?>assets/upload/gameone/<?php echo $row->original_image;?>" alt="Image Not Found !">
+					<img style="margin-top: 2rem; max-width: 400px; height: auto;" id="id1" src="<?php echo base_url()?>assets/upload/gameone/<?php echo $row->original_image;?>" alt="Image Not Found !">
 					
 				<?php	}?>
 			</div>			
