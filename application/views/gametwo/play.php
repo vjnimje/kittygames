@@ -10,7 +10,7 @@
 				<?php 
         			foreach ($game->result() as $row){ ?>
 					<div class="blink">
-						<span><?php echo $row->activity;?></span>
+						<span class="span1"><?php echo $row->activity;?></span>
 					</div>
 					
 				<?php	}?>
