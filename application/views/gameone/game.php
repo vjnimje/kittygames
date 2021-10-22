@@ -1,12 +1,7 @@
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4"><h6 align="center">Completed Games</h6></div>
-			<div class="col-md-4"><h6 align="center">Running Games</h6></div>
-			<div class="col-md-2"><h6 align="center">Games Options</h6></div>
-			<div class="col-md-2"><h6 align="center"></h6></div>
-		</div>
-		<div class="row">
 			<div class="col-md-4">
+				<h6 style="width:100%" class="btn btn-outline-danger" align="center">Completed Games</h6>
 				<div class="align-self-center">
 
 					<div id="">
@@ -19,6 +14,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
+				<h6 style="width:100%" class="btn btn-outline-success" align="center">Running Games</h6>
 				<div class="align-self-center">
 					<?php
 					echo form_open('gameone/play/'.$this->uri->segment(0));?>
@@ -36,6 +32,7 @@
 				
 			</div>
 			<div class="col-md-2">
+				<h6 style="width:100%" class="btn btn-outline-primary" align="center">Game Options</h6>
 				<button onclick="shuffle()" style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-success">Shuffle</button>
 				<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-primary disabled" href="#"> Show</a>
 				<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-warning disabled" href="#"> Start</a>
