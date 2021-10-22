@@ -1,6 +1,12 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-4"><h6 align="center">Completed Games</h6></div>
+		<div class="col-md-4"><h6 align="center">Running Games</h6></div>
+		<div class="col-md-2"><h6 align="center">Games Options</h6></div>
+		<div class="col-md-2"><h6 align="center"></h6></div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
 			
 		</div>
 		<div class="col-md-4">
@@ -26,6 +32,6 @@
 			<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-warning disabled" href="#"> Start</a>
 			<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-danger" href="#">Completed</a>
 		</div>
-		<div class="col-md-3"></div>
+		<div class="col-md-2"></div>
 	</div>
 </div>
