@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 20, 2021 at 10:14 PM
+-- Generation Time: Oct 22, 2021 at 09:52 AM
 -- Server version: 5.5.45
 -- PHP Version: 7.4.1
 
@@ -20,6 +20,37 @@ SET time_zone = "+00:00";
 --
 -- Database: `kittygames`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gameone`
+--
+
+CREATE TABLE `gameone` (
+  `id` int(10) NOT NULL,
+  `game_id` varchar(10) NOT NULL,
+  `blur_image` varchar(100) NOT NULL,
+  `original_image` varchar(100) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `answer` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gameone`
+--
+
+INSERT INTO `gameone` (`id`, `game_id`, `blur_image`, `original_image`, `status`, `answer`) VALUES
+(1, '01', '1634840759hritik.jpg', '1634840759kareena.jpg', 1, 'test 4'),
+(2, '02', '1634840859amir.jpg', '1634840859salman.jpg', 0, 'test'),
+(3, '03', '1', '1', 1, '1'),
+(4, '04', '1', '1', 1, '1'),
+(5, '05', '1', '1', 1, '1'),
+(6, '06', '1', '1', 1, '1'),
+(7, '07', '1', '1', 1, '1'),
+(8, '08', '1', '1', 1, '1'),
+(9, '09', '1', '1', 1, '1'),
+(10, '10', '1', '1', 1, '1');
 
 -- --------------------------------------------------------
 
@@ -42,9 +73,9 @@ CREATE TABLE `games` (
 --
 
 INSERT INTO `games` (`id`, `game_id`, `game_name`, `game_link`, `game_image`, `game_answer`, `game_option_answer`) VALUES
-(1, '01', 'Guess Image 1', 'Test Link 1', '1634706767Capture2.PNG', 'Answer 1', 'Answer 1, Answer 2, Answer 3, Answer 4, Answer 5, Answer 6, Answer 7, Answer 8, Answer 9, Answer 10'),
-(2, '02', 'Guess Image 2', 'Test Link 2', '1634707689Capture.PNG', 'Answer2', 'Answer 1, Answer2, Answer 3, Answer 4, Answer 5, Answer 6, Answer 7, Answer 8, Answer 9, Answer 10'),
-(3, '03', 'Guess Image 3', 'Test Link 3', '1634707829athithi_logo.png', 'Answer 3', 'Answer 1, Answer 2, Answer 3, Answer 4, Answer 5, Answer 6, Answer 7, Answer 8, Answer 9, Answer 10'),
+(1, '01', 'Guess Image 1', 'Test Link 1', '1634706767Capture2.PNG', 'Answer 1', 'Answer 1,Answer 2,Answer 3,Answer 4,Answer 5,Answer 6,Answer 7,Answer 8,Answer 9,Answer 10'),
+(2, '02', 'Guess Image 2', 'Test Link 2', '1634707689Capture.PNG', 'Answer 2', 'Answer 1,Answer 2,Answer 3,Answer 4,Answer 5,Answer 6,Answer 7,Answer 8,Answer 9,Answer 10'),
+(3, '03', 'Guess Image 3', 'Test Link 3', '1634707829athithi_logo.png', 'Answer 3', 'Answer 1,Answer 2,Answer 3,Answer 4,Answer 5,Answer 6,Answer 7,Answer 8,Answer 9,Answer 10'),
 (4, '04', '1', '1', '1', '1', '1'),
 (5, '05', '1', '1', '1', '1', '1'),
 (6, '06', '1', '1', '1', '1', '1'),
@@ -80,6 +111,12 @@ INSERT INTO `user` (`id`, `username`, `password`, `name`) VALUES
 --
 
 --
+-- Indexes for table `gameone`
+--
+ALTER TABLE `gameone`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `games`
 --
 ALTER TABLE `games`
@@ -94,6 +131,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `gameone`
+--
+ALTER TABLE `gameone`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `games`
