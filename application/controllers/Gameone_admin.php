@@ -16,8 +16,8 @@ class Gameone_admin extends CI_Controller {
 			$data['user'] = $user;
 			$data['title']= "Dashboard";
 			$data['username'] = $this->session->userdata('username');
-			$this->load->model('dashboard_model');
-			$data['h']= $this->dashboard_model->get_games();
+			$this->load->model('game_one');
+			$data['h']= $this->game_one->get_games();
 			$error = '';
 			$this->load->view('admin/header',$data);
 			$this->load->view('admin/gameone');
@@ -28,67 +28,104 @@ class Gameone_admin extends CI_Controller {
 
 		}	
 	}
-		function update_game_list(){
+		public function update_game_list(){
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules("game_id", "Game ID", 'required');
-		$this->form_validation->set_rules("game_name", "Game Name", 'required');
-		$this->form_validation->set_rules("game_link", "Game Link", 'required');
-		$this->form_validation->set_rules("game_answer", "Game Answer", 'required');
-		$this->form_validation->set_rules("game_option_answer", "Game Option Answer", 'required');
-		$this->form_validation->set_rules('game_image', 'Upload Game', 'file_required');
+		$this->form_validation->set_rules("answer", "Game Answer", 'required');
+		$this->form_validation->set_rules("status", "Game Answer", 'required');
+		$this->form_validation->set_rules('blur_image', 'Blur Image ', 'file_required');
+		$this->form_validation->set_rules('original_image', 'Original Image', 'file_required');
 		if ($this->form_validation->run()) {
 
-			if(!empty($_FILES['game_image']['name'])){
-	        	$new_name 			= time().$_FILES['game_image']['name'];
-	            $config['file_name']		= str_replace(' ', '_', $new_name);
-	            $config['upload_path']          = './assets/upload/game/';
+			if(!empty($_FILES['blur_image']['name'])){
+	        	$blur_name 						= time().$_FILES['blur_image']['name'];
+	            $config['file_name']			= str_replace(' ', '_', $blur_name);
+	            $config['upload_path']          = './assets/upload/gameone/';
 		        $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
 		        $config['max_size']             = 5000;
 		        $config['max_width']            = 5000;
 		        $config['max_height']           = 5000;
 		        $this->load->library('upload', $config);
-		        $upload_data = $this->upload->data();
-		        $filename = $upload_data['file_name'];
+		        $this->upload->initialize($config);
+		        $blur_data = $this->upload->data();
+		        $blurimage = $blur_data['file_name'];
 	        }
 	        else{
-	        	$filename='';
+	        	$blurimage='';
+	        }
+	        if(!empty($_FILES['original_image']['name'])){
+	        	$original_name 					= time().$_FILES['original_image']['name'];
+	            $config['file_name']			= str_replace(' ', '_', $original_name);
+	            $config['upload_path']          = './assets/upload/gameone/';
+		        $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
+		        $config['max_size']             = 5000;
+		        $config['max_width']            = 5000;
+		        $config['max_height']           = 5000;
+		        $this->load->library('upload', $config);
+		        $this->upload->initialize($config);
+		        $original_data = $this->upload->data();
+		        $originalimage = $original_data['file_name'];
+	        }
+	        else{
+	        	$originalimage='';
 	        }
 
 			$this->load->model('dashboard_model');
 			$data = array(
 				'game_id' =>$this->input->post('game_id'),
-				'game_name' =>$this->input->post('game_name'),
-				'game_link' =>$this->input->post('game_link'),
-				'game_image' => $filename,
-				'game_answer' =>$this->input->post('game_answer'),
-				'game_option_answer' =>$this->input->post('game_option_answer')
-				
+				'blur_image' => $blurimage,
+				'answer' =>$this->input->post('answer'),
+				'original_image' => $originalimage,
+				'status' =>$this->input->post('status')
 			);
-			$this->update_game_image();
+			$this->update_blur_image($blurimage);
+			$this->update_original_image($originalimage);
 			$game_id = $this->input->post('game_id');
 			$this->db->where('game_id', $game_id);
-			$this->db->update('games', $data);
+			$this->db->update('gameone', $data);
 			$this->session->set_flashdata('message', 'You Have susessfully Upadated - '.$game_id.'!');
-			redirect('admin/update_game');
-			
+			redirect('gameone_admin/update_game');
+			// echo "<pre>";
+			// print_r($data);
+			// print_r($original_data);
+			// print_r($blur_data);
 
 		}
 		else{
-			redirect('admin/update_game');
+			redirect('gameone_admin/update_game');
 		}
 	}
-	private function update_game_image(){
-		$config['upload_path']          = './assets/upload/game/';
+	private function update_blur_image($blurimage){
+		$config['file_name']			= $blurimage;
+		$config['upload_path']          = './assets/upload/gameone/';
         $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
         $config['max_size']             = 5000;
         $config['max_width']            = 5000;
         $config['max_height']           = 5000;
 
         $this->load->library('upload', $config);
-
-        if ( ! $this->upload->do_upload('game_image'))
+        $this->upload->initialize($config);
+        if ( ! $this->upload->do_upload('blur_image'))
             {
-                // $error = array('error' => $this->upload->display_errors());
+                echo $this->upload->display_errors();  
+            }
+            else
+            {
+                $this->update_game();
+            }
+	}
+	private function update_original_image($originalimage){
+		$config['file_name']			= $originalimage;
+		$config['upload_path']          = './assets/upload/gameone/';
+        $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
+        $config['max_size']             = 5000;
+        $config['max_width']            = 5000;
+        $config['max_height']           = 5000;
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        if ( ! $this->upload->do_upload('original_image'))
+            {
                 echo $this->upload->display_errors();  
             }
             else

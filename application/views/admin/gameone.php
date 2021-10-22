@@ -6,7 +6,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-5 gap-2">
-			<form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>admin/update_game_list" style="padding:0px 50px;">
+			<form method="post" enctype="multipart/form-data" action="<?php echo base_url();?>gameone_admin/update_game_list" style="padding:0px 50px;">
 				<div class="row" style="padding:10px 0px;">
 					<div class="col-md-4">
 						<label class="form-label">Select game -</label>
@@ -25,48 +25,43 @@
 				</div>
 				<div class="row" style="padding:10px 0px;">
 					<div class="col-md-4">
-						<label class="form-label">Game Name -</label>
-					</div>
-					<div class="col-md-8">
-						<input class="form-control" type="text" name="game_name" value="<?php echo set_value('game_name') ;?>" placeholder="Enter game Name">
-						<span class="text-danger"><?php echo form_error("game_name"); ?></span>
-					</div>
-				</div>
-				<div class="row" style="padding:10px 0px;">
-					<div class="col-md-4">
-						<label class="form-label">Game Link -</label>
-					</div>
-					<div class="col-md-8">
-						<input class="form-control" type="text" name="game_link" value="<?php echo set_value('game_link') ;?>" placeholder="Enter Game Link"  required/>
-						<span class="text-danger"><?php echo form_error("game_link"); ?></span>
-					</div>
-				</div>
-				<div class="row" style="padding:10px 0px;">
-					<div class="col-md-4">
-						<label class="form-label">Game Image -</label>
+						<label class="form-label">Blur Image -</label>
 					</div>
 					<div class="col-md-8">
 						<input type="hidden" name="5000" value="30000" />
-						<input class="form-control" type="file" name="game_image" value="<?php echo set_value('game_image') ;?>" required/>
-						<span class="text-danger"><?php echo form_error("game_image"); ?></span>
+						<input class="form-control" type="file" name="blur_image" value="<?php echo set_value('blur_image') ;?>" required/>
+						<span class="text-danger"><?php echo form_error("blur_image"); ?></span>
 					</div>
 				</div>
 				<div class="row" style="padding:10px 0px;">
 					<div class="col-md-4">
-						<label class="form-label">Game Answer -</label>
+						<label class="form-label">Original Image -</label>
 					</div>
 					<div class="col-md-8">
-						<input class="form-control" type="text" name="game_answer" value="<?php echo set_value('game_answer') ;?>" placeholder="Enter Game Answer"  required/>
-						<span class="text-danger"><?php echo form_error("game_answer"); ?></span>
+						<input class="form-control" type="file" name="original_image" value="<?php echo set_value('original_image') ;?>" required/>
+						<span class="text-danger"><?php echo form_error("original_image"); ?></span>
 					</div>
 				</div>
 				<div class="row" style="padding:10px 0px;">
 					<div class="col-md-4">
-						<label class="form-label">Game Option Answer -</label>
+						<label class="form-label">Answer -</label>
 					</div>
 					<div class="col-md-8">
-						<input class="form-control" type="text" name="game_option_answer" value="<?php echo set_value('game_option_answer') ;?>" placeholder="Enter Game Option Answer"  required/>
-						<span class="text-danger"><?php echo form_error("game_option_answer"); ?></span>
+						<input class="form-control" type="text" name="answer" value="<?php echo set_value('answer') ;?>" placeholder="Enter Answer"  required/>
+						<span class="text-danger"><?php echo form_error("answer"); ?></span>
+					</div>
+				</div>
+				<div class="row" style="padding:10px 0px;">
+					<div class="col-md-4">
+						<label class="form-label">Select Status -</label>
+					</div>
+					<div class="col-md-8">
+						<Select class="form-select form-control" name="status" required/>
+							<option value="">Select Status </option>
+							<option value="1">Active</option>
+							<option value="0">Inactive</option>
+						</Select>
+						<!-- <span class="text-danger"><?php echo form_error("game_id"); ?></span> -->
 					</div>
 				</div>
 				<div class="row" style="padding:50px 0px;">
@@ -86,11 +81,10 @@
 			      <tr>
 			        <th scope="col">Sr. No</th>
 			        <th scope="col">Game Id</th>
-			        <th scope="col">Game Name</th>
-			        <th scope="col">Game Link</th>
-			        <th scope="col">Game Image</th>
-			        <th scope="col">Game Answer</th>
-			        <th scope="col">Game Option Answer</th>
+			        <th scope="col">Blur Image</th>
+			        <th scope="col">Original Image</th>
+			        <th scope="col">Answer</th>
+			        <th scope="col">Status</th>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -100,23 +94,18 @@
 			            ?>         
 			      <tr>
 			        <th scope="row"><?php echo $row->id;?></th>
-			        <td><?php echo $row->game_id;?></td>
-			        <td><?php echo $row->game_name;?></td>
-			        <td><?php echo $row->game_link;?></td>
-			        <td><img class="game_image" style="height: 100px; width: auto;" src="<?php echo base_url();?>assets/upload/game/<?php echo $row->game_image;?>" alt="Game Image Not Found"></td>
-			        <td><?php echo $row->game_answer;?></td>
-			        <?php $myString = $row->game_option_answer;
-			        	$myArray = explode(',', $myString);
-			        ?>
-			        <!-- <td><?php echo $row->game_option_answer;?></td> -->
-			        <!-- <td><ul type="none" class="" id="myList"></ul></td> -->
-			        <td><?php foreach ($myArray as $key) {
-			        		echo $key;
-			        		echo "<br/>";
-			        	}?>
-			        </td>
-			      <?php }  
-			         ?>  </tr>
+			        <th scope="row"><?php echo $row->game_id;?></th>
+			        <td><img class="game_image" style="height: 100px; width: auto;" src="<?php echo base_url();?>assets/upload/gameone/<?php echo $row->blur_image;?>" alt="Game Image Not Found"></td>
+			        <td><img class="game_image" style="height: 100px; width: auto;" src="<?php echo base_url();?>assets/upload/gameone/<?php echo $row->original_image;?>" alt="Game Image Not Found"></td>
+			        <td><?php echo $row->answer;?></td>
+			        <?php if ($row->status == '1') { ?>
+			        <td>Active</td>
+			       <?php } else { ?>
+			        	<td>Inactive</td>
+			       <?php } 
+			   		} ?>
+			        
+				 </tr>
 			    </tbody>
 		  	</table>
 		</div>
