@@ -40,9 +40,9 @@ foreach ($user as $row) {
                     <li class="nav-item">
                       <a class="nav-link" href="<?php echo base_url();?>gamethree_admin/update_game">Game Three</a>
                     </li>
-                    <li class="nav-item">
+<!--                     <li class="nav-item">
                       <a class="nav-link" href="<?php echo base_url();?>admin/update_game">Update Game</a>
-                    </li>
+                    </li> -->
                   </ul>
                   <span class="nav-item dropdown me-2">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
