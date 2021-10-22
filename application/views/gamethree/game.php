@@ -9,9 +9,7 @@
 							
 							?>
 							<div class="col-md-6 shuffleMe">
-								<?php echo form_open('gamethree/play/'.$this->uri->segment(0));?>
 								<input class="btn btn-outline-primary" style="width:100%; padding:1rem; margin: 2rem 0rem;" type="Submit" name="game_button" value="<?php echo $row->topic;?>">
-								<?php echo form_close();?>
 							</div>
 						<?php
 							} ?>
