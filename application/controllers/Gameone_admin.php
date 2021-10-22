@@ -133,4 +133,5 @@ class Gameone_admin extends CI_Controller {
                 $this->update_game();
             }
 	}
+
 }

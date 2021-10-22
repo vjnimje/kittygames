@@ -50,4 +50,17 @@ class Gameone extends CI_Controller {
 		$this->db->update('gameone', $data);	
 	}
 
+	function reset(){
+		$id = array('01','02','03','04','05','06','07','08','09','10');
+		foreach ($id as $key) {
+			$data = array(
+				'game_id'=>$key,
+				'status'=> '1'
+				);
+		$this->db->where('game_id', $key);
+		$this->db->update('gameone', $data);
+		}
+		$this->index();
+	}
+
 }
