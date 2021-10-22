@@ -3,11 +3,12 @@
 			<div class="col-md-4">
 				<h6 style="width:100%" class="btn btn-outline-danger" align="center">Completed Games</h6>
 				<div class="align-self-center">
-					<div id="">
+					<div class="row" id="">
 						<?php
 						foreach($i->result() as $row){
-							?>
-							<div class="<?php echo $row->shape;?>"><?php echo $row->game_id;?></div>
+							?><div class="col-md-6">
+								<div class="<?php echo $row->shape;?>"><?php echo $row->game_id;?></div>
+							</div>
 						<?php } ?>
 					</div>				
 				</div>
@@ -22,8 +23,8 @@
 						foreach($a->result() as $row){
 							?>
 							<div class="col-md-6 shuffleMe">
-								<!-- <div class="<?php echo $row->shape;?>"><a class="shape_link" href="#"><?php echo $row->game_id;?></a></div> -->
-								<input class="<?php echo $row->shape;?>" type="Submit" name="game_button" value="<?php echo $row->game_id;?>">
+								<div class="<?php echo $row->shape;?>"><input class="shapebtn" type="Submit" name="game_button" value="<?php echo $row->game_id;?>"></div>
+								<!-- <input class="<?php echo $row->shape;?>" type="Submit" name="game_button" value="<?php echo $row->game_id;?>"> -->
 							</div>
 						<?php } ?>
 					</div>
