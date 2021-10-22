@@ -55,7 +55,7 @@ class Gametwo extends CI_Controller {
 		$this->db->update('gameone', $data);	
 	}
 	function reset(){
-		$id = array('01','02','03','04','05','06','07','08','09','10');
+		$id = array('01','02','03','04','05');
 		foreach ($id as $key) {
 			$data = array(
 				'game_id'=>$key,
