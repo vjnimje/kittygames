@@ -31,8 +31,9 @@ class Gameone_admin extends CI_Controller {
 		public function update_game_list(){
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules("game_id", "Game ID", 'required');
+		$this->form_validation->set_rules("type", "Game Type", 'required');
 		$this->form_validation->set_rules("answer", "Game Answer", 'required');
-		$this->form_validation->set_rules("status", "Game Answer", 'required');
+		$this->form_validation->set_rules("status", "Status Answer", 'required');
 		$this->form_validation->set_rules('blur_image', 'Blur Image ', 'file_required');
 		$this->form_validation->set_rules('original_image', 'Original Image', 'file_required');
 		if ($this->form_validation->run()) {
@@ -41,7 +42,7 @@ class Gameone_admin extends CI_Controller {
 	        	$blur_name 						= time().$_FILES['blur_image']['name'];
 	            $config['file_name']			= str_replace(' ', '_', $blur_name);
 	            $config['upload_path']          = './assets/upload/gameone/';
-		        $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
+		        $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG","MP3","mp3","mp4","MP4");
 		        $config['max_size']             = 5000;
 		        $config['max_width']            = 5000;
 		        $config['max_height']           = 5000;
@@ -76,6 +77,7 @@ class Gameone_admin extends CI_Controller {
 				'blur_image' => $blurimage,
 				'answer' =>$this->input->post('answer'),
 				'original_image' => $originalimage,
+				'type' =>$this->input->post('type'),
 				'status' =>$this->input->post('status')
 			);
 			$this->update_blur_image($blurimage);
@@ -98,7 +100,7 @@ class Gameone_admin extends CI_Controller {
 	private function update_blur_image($blurimage){
 		$config['file_name']			= $blurimage;
 		$config['upload_path']          = './assets/upload/gameone/';
-        $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG");
+        $config['allowed_types']        = array("gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG","MP3","mp3","mp4","MP4");
         $config['max_size']             = 5000;
         $config['max_width']            = 5000;
         $config['max_height']           = 5000;

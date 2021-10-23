@@ -21,7 +21,7 @@
 			<h6 style="width:100%" class="btn btn-outline-primary" align="center">Game Options</h6>
 			<button onclick="shuffle()" style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-success" disabled/>Shuffle</button>
 			<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-primary disabled" href="#"> Show</a>
-			<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-warning" href="<?php echo base_url();?>gametwo"> Start</a>
+			<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-warning" href="<?php echo base_url();?>gametwo">Continue</a>
 			<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-danger" href="<?php echo base_url();?>gametwo/reset">Reset</a>
 		</div>
 	</div>

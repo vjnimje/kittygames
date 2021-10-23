@@ -1,4 +1,4 @@
-<div id="container">
+<!-- <div id="container">
   <div class="shuffleMe"> DIV 1</div>
   <div class="shuffleMe"> DIV 2</div>
   <div class="shuffleMe"> DIV 3</div>
@@ -33,3 +33,28 @@ function shuffleArray(array) {
     return array;
 }
 </script>
+
+ -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+<div class="all">
+  <div class="single">A</div>
+  <div class="single">B</div>
+  <div class="single">C</div>
+</div>
+
+<!-- <div class="all">
+  <div class="single">A</div>
+  <div class="single">B</div>
+  <div class="single">C</div>
+</div> -->
+<button onclick="myShuffle()">
+  SHUFFLE
+</button>
+<!-- <script type="text/javascript">
+  function myShuffle() {
+    $('.all').each(function() {
+  var random = Math.floor(Math.random() * $('.single', this).length);
+  $('.single', this).hide().eq(random).show();
+});
+  }
+</script> -->

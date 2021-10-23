@@ -23,3 +23,12 @@ function shuffleArray(array) {
     return array;
 }
 </script>
+
+<script type="text/javascript">
+  function myShuffle() {
+    $('.all').each(function() {
+  var random = Math.floor(Math.random() * $('.single', this).length);
+  $('.single', this).hide().eq(random).show();
+});
+  }
+</script>

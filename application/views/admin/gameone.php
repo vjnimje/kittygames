@@ -25,7 +25,21 @@
 				</div>
 				<div class="row" style="padding:10px 0px;">
 					<div class="col-md-4">
-						<label class="form-label">Blur Image -</label>
+						<label class="form-label">Select Game Type -</label>
+					</div>
+					<div class="col-md-8">
+						<Select class="form-select form-control" name="type" required/>
+							<option value="">Select game Type </option>
+							<option value="image">Image</option>
+							<option value="audio">Audio</option>
+							<option value="video">Video</option>
+						</Select>
+						<!-- <span class="text-danger"><?php echo form_error("type"); ?></span> -->
+					</div>
+				</div>
+				<div class="row" style="padding:10px 0px;">
+					<div class="col-md-4">
+						<label class="form-label">Question Image/Audio/Video -</label>
 					</div>
 					<div class="col-md-8">
 						<input type="hidden" name="5000" value="30000" />
@@ -35,7 +49,7 @@
 				</div>
 				<div class="row" style="padding:10px 0px;">
 					<div class="col-md-4">
-						<label class="form-label">Original Image -</label>
+						<label class="form-label">Original Image /Answer Image -</label>
 					</div>
 					<div class="col-md-8">
 						<input class="form-control" type="file" name="original_image" value="<?php echo set_value('original_image') ;?>" required/>
@@ -81,7 +95,8 @@
 			      <tr>
 			        <th scope="col">Sr. No</th>
 			        <th scope="col">Game Id</th>
-			        <th scope="col">Blur Image</th>
+			        <th scope="col">Game Type</th>
+			        <th scope="col">Question Image/Audio/Video</th>
 			        <th scope="col">Original Image</th>
 			        <th scope="col">Answer</th>
 			        <th scope="col">Status</th>
@@ -93,9 +108,31 @@
 			         {  
 			            ?>         
 			      <tr>
-			        <th scope="row"><?php echo $row->id;?></th>
-			        <th scope="row"><?php echo $row->game_id;?></th>
-			        <td><img class="game_image" style="height: 100px; width: auto;" src="<?php echo base_url();?>assets/upload/gameone/<?php echo $row->blur_image;?>" alt="Game Image Not Found"></td>
+			        <td><?php echo $row->id;?></td>
+			        <td><?php echo $row->game_id;?></td>
+			        <td><?php echo $row->type;?></td>
+			        <?php 
+			        $file_type = $row->type;
+			        if ($file_type == 'image') { ?>
+			        	<td><img class="game_image" style="height: 100px; width: auto;" src="<?php echo base_url();?>assets/upload/gameone/<?php echo $row->blur_image;?>" alt="Game Image Not Found"></td>
+			        <?php }elseif ($file_type == 'audio') {?>
+			        	<td>
+			        		<audio controls>
+	  							<source src="<?php echo base_url();?>assets/upload/gameone/<?php echo $row->blur_image;?>" type="audio/ogg">
+							</audio>
+			        	</td>
+			        <?php }elseif ($file_type == 'video') { ?>
+			        	<td>
+			        		<video width="200" controls>
+								<source src="<?php echo base_url();?>assets/upload/gameone/<?php echo $row->blur_image;?>">
+							</video>
+			        	</td>
+			        <?php } else {
+			        	echo "<td>Unsupported Media type</td>";
+			        }
+			        
+			        ?>
+			        <!-- <td><img class="game_image" style="height: 100px; width: auto;" src="<?php echo base_url();?>assets/upload/gameone/<?php echo $row->blur_image;?>" alt="Game Image Not Found"></td> -->
 			        <td><img class="game_image" style="height: 100px; width: auto;" src="<?php echo base_url();?>assets/upload/gameone/<?php echo $row->original_image;?>" alt="Game Image Not Found"></td>
 			        <td><?php echo $row->answer;?></td>
 			        <?php if ($row->status == '1') { ?>

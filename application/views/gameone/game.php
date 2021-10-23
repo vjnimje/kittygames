@@ -17,11 +17,11 @@
 				<div class="align-self-center">
 					<?php
 					echo form_open('gameone/play/'.$this->uri->segment(0));?>
-					<div id="mydiv">
+					<div id="mydiv" class="all">
 						<?php
 						foreach($a->result() as $row){
 							?>
-							<input class="btn btn-outline-success shuffleMe" style="margin:2rem; padding:1rem;" type="Submit" name="game_button" value="<?php echo $row->game_id;?>">
+							<input class="btn btn-outline-success shuffleMe single" style="margin:2rem; padding:1rem;" type="Submit" name="game_button" value="<?php echo $row->game_id;?>">
 						<?php } ?>
 					</div>
 						<?php	echo form_close();
@@ -31,9 +31,9 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-2">
 				<h6 style="width:100%" class="btn btn-outline-primary" align="center">Game Options</h6>
-				<button onclick="shuffle()" style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-success">Shuffle</button>
+				<button onclick="myShuffle()" style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-success">Shuffle All</button>
 				<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-primary disabled" href="#"> Show</a>
-				<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-warning disabled" href="#"> Start</a>
+				<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-warning disabled" href="#"> Continue</a>
 				<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-danger" href="<?php echo base_url();?>gameone/reset">Reset</a>
 			</div>
 		</div>
