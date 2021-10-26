@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container myborder">
 	<div class="row">
 		<div class="col-md-4">
 			<h6 style="width:100%" class="btn btn-outline-danger" align="center">Completed Games</h6>
@@ -38,7 +38,7 @@
 				echo form_close();
 			?>
 			<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-warning disabled" href="#"> Continue</a>
-			<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-danger" href="<?php echo base_url();?>gameone/reset">Reset</a>
+			<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-danger" href="<?php echo base_url();?>gameone/reset">Reset Game</a>
 		</div>
 		
 	</div>

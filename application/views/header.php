@@ -5,32 +5,39 @@
 	   <!--<meta charset="utf-8"> -->
 	   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Kitty Games</title>
+	<title>Star Mahila</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/blur.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/shapes.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; margin-bottom: 2rem;">
-	<div class="container" style="padding:0.5rem;">
-		<a class="navbar-brand" href="<?php echo base_url();?>">Kitty Games</a>
-		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			</button>
-		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-		    <ul class="navbar-nav">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="<?php echo base_url();?>gameone">Round One</a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="<?php echo base_url();?>gametwo">Round Two</a>
-		      </li>
-		      <li class="nav-item active">
-		        <a class="nav-link" href="<?php echo base_url();?>gamethree">Round Three</a>
-		      </li>
-		    </ul>
-		</div>
+	<div style="background-color: #fff;">
+		<div class="container">
+	  		<div class="row">
+	  			<div class="col-md-2">
+	  				<img style="max-width: 120px; height:auto;" src="<?php echo base_url();?>assets/l1.jpeg">
+	  			</div>
+	  			<div class="col-md-8" >
+
+	  				<h1 style="text-align:center; padding-top: 40px; font-family: fangsong; font-weight: 600; font-style: oblique;"> APCO Star Mahila by Vizual Ads</h1>
+	  			</div>
+	  			<div class="col-md-2">
+	  				<img style="max-width: 120px; height:auto;display: block; margin-left: auto;" src="<?php echo base_url();?>assets/apco.png">
+	  			</div>
+	  		</div>
+	  		<div class="row">
+	  			<div class="col-md-2">
+	  				
+	  			</div>
+	  			<div class="col-md-8" style="margin-bottom: 1rem;">
+	  				<a class="btn btn-danger" style="width:30%; background-color:#61eaa8;" href="<?php echo base_url();?>gameone">Round One</a>
+	  				<a class="btn btn-success" style="width:30%; background-color: #3a3af0;" href="<?php echo base_url();?>gametwo">Round Two</a>
+	  				<a class="btn btn-primary" style="width:30%; background-color: #0dcaf0;" href="<?php echo base_url();?>gamethree">Round Three</a>
+	  			</div>
+	  			<div class="col-md-2">
+	  				
+	  			</div>
+	  		</div>
+	  	</div>
 	</div>
-</nav>
-  	

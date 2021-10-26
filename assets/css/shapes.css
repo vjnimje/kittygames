@@ -1,64 +1,37 @@
-.circle {
+.shape_link{
+  color: white;
+  text-decoration: none;
+}
+.maincircle {
   height: 100px;
   width: 100px;
-  background-color: #0d6efd;
   border-radius: 50%;
   text-align: center;
   color: white;
   font-size: 60px;
   margin: 0.5rem;
 }
-.square {
-  height: 100px;
-  width: 100px;
-  background-color: #198754;
-  text-align: center;
-  color: white;
-  font-size: 60px;
-  margin: 0.5rem;
-}
-
-.rectangle {
-  height: 100px;
-  width: 80px;
-  background-color: #b02a37;
-  text-align: center;
-  color: white;
-  font-size: 60px;
-  margin: 0.5rem;
-}
-
-.trapezoid {
-  border-bottom: 100px solid #ffc107;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  height: 0;
-  width: 150px;
-  text-align: center;
-  color: white;
-  font-size: 60px;
-  margin: 0.5em;
-}
-.parallelogram {
-  width: 100px;
-  height: 100px;
-  transform: skew(20deg);
-  background: #17a2b8;
-  text-align: center;
-  color: white;
-  font-size: 60px;
-  margin: 0.5rem;
-}
-
-.shape_link{
-  color: white;
-  text-decoration: none;
-}
-
 .blink_me {
   animation: blinker 1s linear infinite;
 }
 
+.circle{
+    background-color: #0d6efd; 
+}
+
+.square {
+    background-color: #198754;  
+}
+.rectangle {
+  background-color: #b02a37;
+}
+
+.trapezoid {
+  background-color: #ffc107;
+}
+.parallelogram {
+  background-color: #17a2b8;
+}
 @keyframes blinker {  
   50% { opacity: 0; }
 }
@@ -90,4 +63,7 @@
         background-color: transparent;
         color: #fff;
         /*box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);*/
+}
+.myborder{
+border: 2px solid #0dcaf0; padding: 1rem; margin-bottom:1rem;
 }

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 23, 2021 at 04:47 PM
--- Server version: 5.5.45
--- PHP Version: 7.4.1
+-- Host: localhost:3306
+-- Generation Time: Oct 26, 2021 at 03:53 AM
+-- Server version: 5.6.51-cll-lve
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kittygames`
+-- Database: `gameshow.vizaualads.com`
 --
 
 -- --------------------------------------------------------
@@ -42,16 +43,16 @@ CREATE TABLE `gameone` (
 --
 
 INSERT INTO `gameone` (`id`, `game_id`, `type`, `blur_image`, `original_image`, `status`, `answer`) VALUES
-(1, '01', 'image', '1634840759hritik.jpg', '1634840759kareena.jpg', 1, 'test 4'),
-(2, '02', 'audio', '1634984222test_mp3.mp3', '1634984222salman.jpg', 1, 'test 2'),
-(3, '03', 'video', '1634984576test_mp4.mp4', '1634984576amir.jpg', 1, 'Final'),
-(4, '04', 'image', '1', '1', 1, '1'),
-(5, '05', 'image', '1', '1', 1, '1'),
-(6, '06', 'image', '1', '1', 1, '1'),
-(7, '07', 'image', '1', '1', 1, '1'),
-(8, '08', 'image', '1', '1', 1, '1'),
-(9, '09', 'image', '1', '1', 1, '1'),
-(10, '10', 'image', '1', '1', 1, '1');
+(1, '01', 'image', '1634997056who_is_on_the_screen.jpg', '1634997056template.png', 1, 'Abhimanyudu'),
+(2, '02', 'image', '1634997091Guess_Who.jpg', '1634997091template1.png', 1, 'K Balachandar  &  K viswanath'),
+(3, '03', 'image', '1634997004Guess_Me.jpg', '16349970043ANS.jpg', 1, 'test 2'),
+(4, '04', 'image', '1635000373GUESS_ABCD.png', '1635000373q4a.jpeg', 1, 'ABCD'),
+(5, '05', 'image', '16350008082ndGuess_ABCD.png', '1635000808q5a.jpeg', 1, 'ABCD'),
+(6, '06', 'image', '1634998350Guess_The_Movie.jpg', '1634998350Answer.jpg', 1, 'Answer'),
+(7, '07', 'audio', '1635000724music.mp3', '1635000724template5.png', 1, 'Gopi Sundar'),
+(8, '08', 'image', '1634998586Find_the_Movie.jpg', '1634998586template2.png', 1, 'AkaliRajyam'),
+(9, '09', 'image', '1634998834fun.jpg', '1634998834template3.png', 1, 'Ven-Key-Ma-Ma'),
+(10, '10', 'video', '1634999423video.mp4', '1634999423template4.png', 1, 'Aravind Swamy & Druva');
 
 -- --------------------------------------------------------
 
@@ -104,11 +105,11 @@ CREATE TABLE `gamethree` (
 --
 
 INSERT INTO `gamethree` (`id`, `game_id`, `topic`, `questions`, `status`) VALUES
-(1, '01', 'Cricket', 'Que 1,Que 2,Que 3,Que 4', 1),
-(2, '02', 'T20 World Cup', 'Que 1,Que 2,Que 3,Que 4', 1),
-(3, '03', 'Covid 19 ', 'Que 1,Que 2,Que 3,Que 4', 1),
-(4, '04', 'Life In USA', 'Que 1,Que 2,Que 3,Que 4', 1),
-(5, '05', 'Indian Politics', 'Que 1,Que 2,Que 3,Que 4', 1);
+(1, '01', 'Indian Women Sports', 'Name the 1st Indian Women to Win a Medal in Olympics ? , Magnificent Mary & 6 world titles Indian Super Mom Boxer from which State? , Who is the highest scorer in Women\'s International Cricket ? ,Who is the Captain of Indian Female Hockey Team?', 1),
+(2, '02', 'Indian Politics', 'Who is the 1st full-time female Finance Minister of India ? ,  In 1982 Indira Gandhi ordered a Police Action at Sikh Temple. What was the Name of that Action? , Mamata Banerjee has been sworn 3times in a row as the CM of West Bengal from which Party? ,  Who is the Youngest Female to receive the Noble Peace Award?', 1),
+(3, '03', 'Indian Science & Tech', 'Which is India\'s 1st Satellite ? , Which gas is known as \"Laughing Gas\" ? , Which Blood Group is known as Universal Recipients\' group ? , Who was the 1st Indian-born woman to enter space & died in space shuttle Columbia ?', 1),
+(4, '04', 'Telugu Literature ', 'Whose Birthday Telugu Language Day is celebrated on 29th August ? ,  Who Translated Vishwanatha Satyanarana \"VeyyiPadagalu\" to Hindi? ,  శ్రీకృష్ణ దేవరాయలు రచించిన ప్రసిద్ధ గ్రంధం ఏది? ,  ఆంధ్ర కవితా పితామహునిగా ప్రసిద్దుడైన కవి ఎవరు?', 1),
+(5, '05', 'Indian Culture/History', '\'Natya - Shastra\' the main source of India\'s classical dances was written by ? ,  The India\'s highest annual rainfall is reported at ? , The Vedic deity Indra was the Goddess of ? , Tulsidas the author of Ramcharitmanas was a contemporary of which of the following rulers?', 1);
 
 -- --------------------------------------------------------
 
@@ -129,11 +130,11 @@ CREATE TABLE `gametwo` (
 --
 
 INSERT INTO `gametwo` (`id`, `game_id`, `shape`, `activity`, `status`) VALUES
-(1, '01', 'circle', 'Sing Song', 1),
-(2, '02', 'rectangle', 'Play Guitar', 1),
-(3, '03', 'trapezoid', 'Dance', 1),
-(4, '04', 'square', 'Run 100 Meter', 1),
-(5, '05', 'parallelogram', 'Acting', 1);
+(1, '01', 'circle', 'BUILT FORM BRICK TOWER-ISHAPE', 0),
+(2, '02', 'rectangle', 'PUZZLE _FRAME IT', 1),
+(3, '03', 'trapezoid', 'BLOW BALOONS', 1),
+(4, '04', 'square', 'PLACE THEM N BASKET', 1),
+(5, '05', 'parallelogram', 'TELL & DRAW A STORY', 1);
 
 -- --------------------------------------------------------
 
