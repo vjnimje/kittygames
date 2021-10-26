@@ -13,13 +13,43 @@ class Gamethree extends CI_Controller {
 		$this->load->view('footer');
 	}
 	public function play(){
-		$id = $this->input->post('game_id');
-	    $game = $this->db->query("SELECT * FROM gamethree WHERE id = '".$id."'");
+		$topic = $this->input->post('topic');
+	    $game = $this->db->query("SELECT * FROM gamethree WHERE status ='1' AND topic = '".$topic."'");
 	     if ($game->num_rows()>0) {
 				$data = array();
 			    $data['game']=$game;
 			    $this->load->view('header',$data);
 				$this->load->view('gamethree/play');
+				$this->load->view('footer');
+			}
+			else{
+				$this->session->set_flashdata('error', 'No Games Found !');
+				redirect('game');
+			}
+	}
+	public function g_option(){
+		$id = $this->input->post('game_id');
+	    $game = $this->db->query("SELECT * FROM gamethree WHERE game_id = '".$id."'");
+	     if ($game->num_rows()>0) {
+				$data = array();
+			    $data['game']=$game;
+			    $this->load->view('header',$data);
+				$this->load->view('gamethree/options');
+				$this->load->view('footer');
+			}
+			else{
+				$this->session->set_flashdata('error', 'No Games Found !');
+				redirect('game');
+			}
+	}
+	public function result(){
+		$id = $this->input->post('game_id');
+	    $game = $this->db->query("SELECT * FROM gamethree WHERE game_id = '".$id."'");
+	     if ($game->num_rows()>0) {
+				$data = array();
+			    $data['game']=$game;
+			    $this->load->view('header',$data);
+				$this->load->view('gamethree/result');
 				$this->load->view('footer');
 			}
 			else{
@@ -34,7 +64,7 @@ class Gamethree extends CI_Controller {
 			$this->db->update('gamethree', $data);
 	}
 	function reset(){
-		$id = array('01','02','03','04','05');
+		$id = array('01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16');
 		foreach ($id as $key) {
 			$data = array(
 				'game_id'=>$key,

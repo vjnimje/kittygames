@@ -8,8 +8,8 @@
 						foreach($i->result() as $row){
 							
 							?>
-							<div class="col-md-6 shuffleMe">
-								<input class="btn btn-outline-primary" style="width:100%; padding:1rem; margin: 2rem 0rem;" type="Submit" name="game_button" value="<?php echo $row->topic;?>">
+							<div class="col-md-12 shuffleMe">
+								<input class="btn btn-outline-primary" style="white-space:normal; width:100%; padding:1rem; margin: 2rem 0rem;" type="Submit" name="game_button" value="<?php echo $row->questions;?>">
 							</div>
 						<?php
 							} ?>
@@ -28,7 +28,7 @@
 							?>
 							<div class="col-md-6 shuffleMe single">
 								<?php echo form_open('gamethree/play/'.$this->uri->segment(0));?>
-								<input type="hidden" name="game_id" value="<?php echo $row->game_id?>">
+								<input type="hidden" name="topic" value="<?php echo $row->topic;?>">
 								<input class="btn btn-outline-primary" style="width:100%; padding:1rem; margin: 2rem 0rem;" type="Submit" name="game_button" value="<?php echo $row->topic;?>">
 								<?php echo form_close();?>
 							</div>

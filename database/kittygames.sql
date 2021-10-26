@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Oct 26, 2021 at 03:53 AM
--- Server version: 5.6.51-cll-lve
--- PHP Version: 7.3.27
+-- Host: localhost
+-- Generation Time: Oct 26, 2021 at 08:38 PM
+-- Server version: 5.5.45
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gameshow.vizaualads.com`
+-- Database: `kittygames`
 --
 
 -- --------------------------------------------------------
@@ -43,8 +42,8 @@ CREATE TABLE `gameone` (
 --
 
 INSERT INTO `gameone` (`id`, `game_id`, `type`, `blur_image`, `original_image`, `status`, `answer`) VALUES
-(1, '01', 'image', '1634997056who_is_on_the_screen.jpg', '1634997056template.png', 1, 'Abhimanyudu'),
-(2, '02', 'image', '1634997091Guess_Who.jpg', '1634997091template1.png', 1, 'K Balachandar  &  K viswanath'),
+(1, '01', 'image', '1634997056who_is_on_the_screen.jpg', '1634997056template.png', 0, 'Abhimanyudu'),
+(2, '02', 'image', '1634997091Guess_Who.jpg', '1634997091template1.png', 0, 'K Balachandar  &  K viswanath'),
 (3, '03', 'image', '1634997004Guess_Me.jpg', '16349970043ANS.jpg', 1, 'test 2'),
 (4, '04', 'image', '1635000373GUESS_ABCD.png', '1635000373q4a.jpeg', 1, 'ABCD'),
 (5, '05', 'image', '16350008082ndGuess_ABCD.png', '1635000808q5a.jpeg', 1, 'ABCD'),
@@ -97,6 +96,8 @@ CREATE TABLE `gamethree` (
   `game_id` varchar(10) NOT NULL,
   `topic` varchar(100) NOT NULL,
   `questions` varchar(1000) NOT NULL,
+  `g_option` varchar(1000) NOT NULL,
+  `answer` varchar(100) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -104,12 +105,23 @@ CREATE TABLE `gamethree` (
 -- Dumping data for table `gamethree`
 --
 
-INSERT INTO `gamethree` (`id`, `game_id`, `topic`, `questions`, `status`) VALUES
-(1, '01', 'Indian Women Sports', 'Name the 1st Indian Women to Win a Medal in Olympics ? , Magnificent Mary & 6 world titles Indian Super Mom Boxer from which State? , Who is the highest scorer in Women\'s International Cricket ? ,Who is the Captain of Indian Female Hockey Team?', 1),
-(2, '02', 'Indian Politics', 'Who is the 1st full-time female Finance Minister of India ? ,  In 1982 Indira Gandhi ordered a Police Action at Sikh Temple. What was the Name of that Action? , Mamata Banerjee has been sworn 3times in a row as the CM of West Bengal from which Party? ,  Who is the Youngest Female to receive the Noble Peace Award?', 1),
-(3, '03', 'Indian Science & Tech', 'Which is India\'s 1st Satellite ? , Which gas is known as \"Laughing Gas\" ? , Which Blood Group is known as Universal Recipients\' group ? , Who was the 1st Indian-born woman to enter space & died in space shuttle Columbia ?', 1),
-(4, '04', 'Telugu Literature ', 'Whose Birthday Telugu Language Day is celebrated on 29th August ? ,  Who Translated Vishwanatha Satyanarana \"VeyyiPadagalu\" to Hindi? ,  శ్రీకృష్ణ దేవరాయలు రచించిన ప్రసిద్ధ గ్రంధం ఏది? ,  ఆంధ్ర కవితా పితామహునిగా ప్రసిద్దుడైన కవి ఎవరు?', 1),
-(5, '05', 'Indian Culture/History', '\'Natya - Shastra\' the main source of India\'s classical dances was written by ? ,  The India\'s highest annual rainfall is reported at ? , The Vedic deity Indra was the Goddess of ? , Tulsidas the author of Ramcharitmanas was a contemporary of which of the following rulers?', 1);
+INSERT INTO `gamethree` (`id`, `game_id`, `topic`, `questions`, `g_option`, `answer`, `status`) VALUES
+(1, '01', 'Indian Women Sports', 'Name the 1st INDIAN WOMEN to win a Medal in Olympics? ', 'P V SINDHU,KARNAM MALLESWARI,SANIA MIRZA,SAINA NEHAWAL ', 'KARNAM MALLESWARI', 0),
+(2, '02', 'Indian Women Sports', 'Magnificent Mary , Supermom & 6 world titles Indian Woman Boxer from Which Place ?', 'Kerala,Assam,Tripura,Manipur', 'Manipur', 0),
+(3, '03', 'Indian Women Sports', 'Who is the highest scorer in women\'s international cricket  and only Captain who lead India to the World Cup final twice?', 'Mithali Raj,Harmanpreet Kaur,Smriti Mandhana,Jhulan Goswami', 'Maithali Raj', 1),
+(4, '04', 'Indian Women Sports', 'Who is captain of Indian female hockey team? ', 'Rani Rampal,Gurjit Kaur,Savita Punia,Vandana Katariya ', 'Rani Rampal', 1),
+(5, '05', 'Women In Politics', 'Who is the first full-time female Finance Minister of India ?', 'Nirmala Sitharaman,Indira Gandhi,Smriti Irani,Sushma Swaraj', 'Nirmala Sitharaman', 1),
+(6, '06', 'Women In Politics', 'In 1982, Gandhi ordered a police action at a Sikh temple. What was the name of that action?', 'Operation Emergency,Operation Sikh,Operation Blue Star,Operation Red Star', 'Operation Blue Star', 1),
+(7, '07', 'Women In Politics', 'Mamata Banerjee has been sworn-in 3 times in a row, as the Chief Minister of West Bengal from Which Party ?', 'Bharat Janata Party,Congress,Community Party,All India Trimanool Congress', 'All India Trinamool Congress', 1),
+(8, '08', 'Women In Politics', 'who was shot in the head by a Taliban gunman in 2012 but survived and  became the youngest person to receive the Nobel Peace Prize?', 'Malala Yousafzai,Jamila Afghani,Samira Ibrahim,Kadra Yusuf', 'Malala Yousafzai', 1),
+(9, '09', '1', '1', 'O1,O2,O3,O4', 'O2', 1),
+(10, '10', '1', '1', 'O1,O2,O3,O4', 'O2', 1),
+(11, '11', '1', '1', 'O1,O2,O3,O4', 'O2', 1),
+(12, '12', '1', '1', 'O1,O2,O3,O4', 'O2', 1),
+(13, '13', '1', '1', 'O1,O2,O3,O4', 'O2', 1),
+(14, '14', '1', '1', 'O1,O2,O3,O4', 'O2', 1),
+(15, '15', '1', '1', 'O1,O2,O3,O4', 'O2', 1),
+(16, '16', '1', '1', 'O1,O2,O3,O4', 'O2', 1);
 
 -- --------------------------------------------------------
 
@@ -131,8 +143,8 @@ CREATE TABLE `gametwo` (
 
 INSERT INTO `gametwo` (`id`, `game_id`, `shape`, `activity`, `status`) VALUES
 (1, '01', 'circle', 'BUILT FORM BRICK TOWER-ISHAPE', 0),
-(2, '02', 'rectangle', 'PUZZLE _FRAME IT', 1),
-(3, '03', 'trapezoid', 'BLOW BALOONS', 1),
+(2, '02', 'rectangle', 'PUZZLE _FRAME IT', 0),
+(3, '03', 'trapezoid', 'BLOW BALOONS', 0),
 (4, '04', 'square', 'PLACE THEM N BASKET', 1),
 (5, '05', 'parallelogram', 'TELL & DRAW A STORY', 1);
 
@@ -212,7 +224,7 @@ ALTER TABLE `games`
 -- AUTO_INCREMENT for table `gamethree`
 --
 ALTER TABLE `gamethree`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `gametwo`

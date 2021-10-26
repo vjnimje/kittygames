@@ -6,11 +6,13 @@
 		}
 		function get_active_games(){
 			$this->db->where('status', '1');
+			$this->db->group_by('topic');
 			$query = $this->db->get('gamethree');
         	return $query; 
 		}
 		function get_inactive_games(){
 			$this->db->where('status', '0');
+			$this->db->group_by('topic');
 			$query = $this->db->get('gamethree');
         	return $query; 
 		}

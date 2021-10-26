@@ -43,6 +43,24 @@
 				</div>
 				<div class="row" style="padding:10px 0px;">
 					<div class="col-md-4">
+						<label class="form-label">Options -</label>
+					</div>
+					<div class="col-md-8">
+						<input class="form-control" type="text" name="g_option" value="<?php echo set_value('g_option') ;?>" placeholder="Questions on Topic "  required/>
+						<span class="text-danger"><?php echo form_error("g_option"); ?></span>
+					</div>
+				</div>
+				<div class="row" style="padding:10px 0px;">
+					<div class="col-md-4">
+						<label class="form-label">Answer -</label>
+					</div>
+					<div class="col-md-8">
+						<input class="form-control" type="text" name="answer" value="<?php echo set_value('answer') ;?>" placeholder="Questions on Topic "  required/>
+						<span class="text-danger"><?php echo form_error("answer"); ?></span>
+					</div>
+				</div>
+				<div class="row" style="padding:10px 0px;">
+					<div class="col-md-4">
 						<label class="form-label">Select Status -</label>
 					</div>
 					<div class="col-md-8">
@@ -72,6 +90,8 @@
 			        <th scope="col">Game Id</th>
 			        <th scope="col">Topic</th>
 			        <th scope="col">Questions</th>
+			        <th scope="col">Options</th>
+			        <th scope="col">answers</th>
 			        <th scope="col">Status</th>
 			      </tr>
 			    </thead>
@@ -84,15 +104,19 @@
 			        <td><?php echo $row->id;?></td>
 			        <td><?php echo $row->game_id;?></td>
 					<td><?php echo $row->topic;?></td>
-					 <?php $myString = $row->questions;
+					<td><?php echo $row->questions;?></td>
+					 <?php $myString = $row->g_option;
 			        	$myArray = explode(',', $myString);
 			        ?>
 			        <!-- <td><?php echo $row->questions;?></td> -->
-			        <td><?php foreach ($myArray as $key) {
+			        <td><?php $i = 0; foreach ($myArray as $key) {
+			        		 $i++;
+			        		echo $i.'. ';
 			        		echo $key;
 			        		echo "<br/>";
 			        	}?>
 			        </td>
+			        <td><?php echo $row->answer;?></td>
 			        <?php if ($row->status == '1') { ?>
 			        <td>Active</td>
 			       <?php } else { ?>

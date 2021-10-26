@@ -33,13 +33,17 @@ class Gamethree_admin extends CI_Controller {
 		$this->form_validation->set_rules("game_id", "Game ID", 'required');
 		$this->form_validation->set_rules("topic", "Topic", 'required');
 		$this->form_validation->set_rules("questions", "Game Questions", 'required');
+		$this->form_validation->set_rules("g_option", "Options", 'required');
+		$this->form_validation->set_rules("answer", "Answer", 'required');
 		$this->form_validation->set_rules("status", "Game Status", 'required');
 		if ($this->form_validation->run()) {
 
 			$data = array(
 				'game_id' =>$this->input->post('game_id'),
-				'topic' => $this->input->post('topic'),
+				'topic' =>$this->input->post('topic'),
 				'questions' =>$this->input->post('questions'),
+				'g_option' =>$this->input->post('g_option'),
+				'answer' =>$this->input->post('answer'),
 				'status' =>$this->input->post('status')
 			);
 			$game_id = $this->input->post('game_id');
