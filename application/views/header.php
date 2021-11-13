@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/blur.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/shapes.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/test.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
