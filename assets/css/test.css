@@ -1,17 +1,19 @@
 
 .popup-button {
-  display: block;
+  display: inline-block;
   text-align: center;
   text-decoration: none;
 /*  font-weight: 800;
   font-size: 1em;*/
   text-transform: uppercase;
   color: #fff;
+  border: 1px solid #000;
   border-radius: 6px;
   margin: 10px;
   padding: 1em 3em;
   background-size: 300% 300%;
   color: white;
+
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.5), 0 1px 3px rgba(0, 0, 0, 0.5);
 
   background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
@@ -37,5 +39,19 @@
   background-position: 20% center;
 }
 #btn-3{
-
+    background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97  51%, #DD5E89  100%);
+  transition: 0.5s;
+}
+#btn-4{
+  background-image: linear-gradient(to right, #fc00ff 0%, #00dbde  51%, #fc00ff  100%);
+}
+#btn-5 {
+    background-image: repeating-linear-gradient(-45deg, 
+      #7BDFF2 5px 10px,
+      #B2F7EF 10px 20px,
+      #EFF7F6 20px 30px,
+      #F7D6E0 30px 40px,
+      #F2B5D4 40px 50px
+  );
+  color: black;
 }

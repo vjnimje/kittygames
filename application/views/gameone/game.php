@@ -22,7 +22,7 @@
 						<?php
 						foreach($a->result() as $row){
 							?>
-							<input class="btn btn-outline-success shuffleMe single" style="margin:2rem; padding:1rem;" type="Submit" name="game_button" value="<?php echo $row->game_id;?>">
+							<input id="btn-5" class="popup-button shuffleMe single" style="margin:2rem; padding:1rem;" type="Submit" name="game_button" value="<?php echo $row->game_id;?>">
 						<?php } ?>
 					</div>
 						<?php	echo form_close();
@@ -35,8 +35,8 @@
 					<h6 style="width:100%" class="btn btn-outline-primary" align="center">Game Options</h6>
 					<button onclick="myShuffle()" id="btn-2" style="width:100%; margin:2rem 0rem; padding: 1rem;" class="popup-button">Shuffle All</button>
 					<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="popup-button disabled" href="#"> Show</a>
-					<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-warning disabled" href="#"> Continue</a>
-					<a style="width:100%; margin:2rem 0rem; padding: 1rem;" class="btn btn-danger" href="<?php echo base_url();?>gameone/reset">Reset Game</a>
+					<a id="btn-3" style="width:100%; margin:2rem 0rem; padding: 1rem;" class="popup-button disabled" href="#"> Continue</a>
+					<a id="btn-4" style="width:100%; margin:2rem 0rem; padding: 1rem;" class="popup-button" href="<?php echo base_url();?>gameone/reset">Reset Game</a>
 				</div>
 				
 			</div>
