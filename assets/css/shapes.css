@@ -71,5 +71,5 @@
     padding: 1rem;
 }
 .myborder:hover{
-  background: linear-gradient(180deg, #fff 0%, #FFC0CB 100%);
+  background: linear-gradient(180deg, #fff 1%, #FFC0CB 100%);
 }
