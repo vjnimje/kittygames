@@ -32,9 +32,9 @@
 	  				
 	  			</div>
 	  			<div class="col-md-8" style="margin-bottom: 1rem;">
-	  				<a class="btn btn-danger" style="width:30%; background-color:#61eaa8;" href="<?php echo base_url();?>gameone">Round One</a>
-	  				<a class="btn btn-success" style="width:30%; background-color: #3a3af0;" href="<?php echo base_url();?>gametwo">Round Two</a>
-	  				<a class="btn btn-primary" style="width:30%; background-color: #0dcaf0;" href="<?php echo base_url();?>gamethree">Round Three</a>
+	  				<a class="btn btn-danger" style="width:30%; background-color:#61eaa8;" href="<?php echo base_url();?>gameone">Cheppava Chirugaali</a>
+	  				<a class="btn btn-success" style="width:30%; background-color: #3a3af0;" href="<?php echo base_url();?>gametwo">Aata Aadu Kundam Raaa</a>
+	  				<a class="btn btn-primary" style="width:30%; background-color: #0dcaf0;" href="<?php echo base_url();?>gamethree">iSmart Baby</a>
 	  			</div>
 	  			<div class="col-md-2">
 	  				
